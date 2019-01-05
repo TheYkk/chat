@@ -28,6 +28,6 @@ io.on('connection', socket => {
 });
 
 // listen
-http.listen(process.env.PORT || 3000, () => {
+http.listen(process.env.PORT || 30002, () => {
   console.log('Running');
 });

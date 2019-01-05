@@ -1,8 +1,10 @@
+
 const socket = io.connect(location.href);
 
   // dom
 const message = document.querySelector('#message'),
       handle = document.querySelector('#name'),
+      chat = document.querySelector('.chat-window'),
       btn = document.querySelector('#send'),
       output = document.querySelector('#output'),
       feedback = document.querySelector('#feedback'),
@@ -19,20 +21,38 @@ const message = document.querySelector('#message'),
         }
         message.value = '';
       });
-
+      
       message.addEventListener('keypress', () => {
-        socket.emit('typing', handle.value);
+        setTimeout(() =>{ socket.emit('typing', handle.value); },500);
       });
 
       socket.on('chat', data => {
-        output.innerHTML += `<p><strong>${data.handle}: </strong>${data.message}</p>`;
+        assagin(() => {
+          output.innerHTML += `<p><strong>${data.handle}: </strong>${data.message}</p>`;
+        });
+        
       });
+
       let timer = setTimeout(makeNoTypingState, 1000);
       socket.on('typing', data => {
-        feedback.innerHTML = `<p><em>${data} is typing a message...</em></p>`;
-        clearTimeout(timer);
-        timer = setTimeout(makeNoTypingState, 1000);
+        assagin(() => {
+          feedback.innerHTML = `<p><em>${data} is typing a message...</em></p>`;
+          clearTimeout(timer);
+          timer = setTimeout(makeNoTypingState, 1000);
+        });
       });
       function makeNoTypingState() {
         feedback.innerHTML = "";
-      }﻿
+      }
+
+      function assagin(callback){        
+        var a =  chat.scrollTop; 
+        var b =  chat.scrollHeight -  chat.clientHeight; 
+        var c = a / b;
+        if (c==1){
+          callback();
+          chat.scrollTop = chat.scrollHeight;
+        }else{
+          callback();
+        }
+      }
