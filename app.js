@@ -1,3 +1,12 @@
+/*
+  _____   _             __   __  _      _    
+ |_   _| | |__     ___  \ \ / / | | __ | | __
+   | |   | '_ \   / _ \  \ V /  | |/ / | |/ /
+   | |   | | | | |  __/   | |   |   <  |   < 
+   |_|   |_| |_|  \___|   |_|   |_|\_\ |_|\_\
+
+Developer By TheYkk(Yusuf Kaan Karakaya <yusufkaan142@gmail.com>)
+*/
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
