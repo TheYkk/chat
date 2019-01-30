@@ -1,6 +1,6 @@
 # Chat Real Time Socket.Io - Node - Express - MongoDB
 
-Simple Chat using Socket.io
+Simple Chat using Socket.io with docker and docker-compose
 
 ## Instalation
 
@@ -15,7 +15,13 @@ Run app
 ```
 npm start
 ```
+## For docker
 
+Run compose
+
+```
+docker-compose up
+```
 ## Built With
 
 * Node.Js
@@ -26,7 +32,5 @@ npm start
 ## Author
 
 **germancutraro**
+**TheYkk**
 
-## Why
-
-* Practise
