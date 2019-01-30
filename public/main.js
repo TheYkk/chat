@@ -23,7 +23,7 @@ const message = document.querySelector('#message'),
       });
       
       message.addEventListener('keypress', () => {
-        setTimeout(() =>{ socket.emit('typing', handle.value); },500);
+        setTimeout(() =>{ socket.emit('typing', handle.value); },100);
       });
 
       socket.on('chat', data => {

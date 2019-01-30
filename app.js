@@ -5,7 +5,8 @@
    | |   | | | | |  __/   | |   |   <  |   < 
    |_|   |_| |_|  \___|   |_|   |_|\_\ |_|\_\
 
-Developer By TheYkk(Yusuf Kaan Karakaya <yusufkaan142@gmail.com>)
+Developed By TheYkk(Yusuf Kaan Karakaya <yusufkaan142@gmail.com>) and germancutraro(Germán Cutraro <germancutraro@hotmail.com>)
+
 */
 const express = require('express');
 const app = express();

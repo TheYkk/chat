@@ -1,0 +1,26 @@
+version: '3'
+services:
+  chat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '30002:30002'
+    environment:
+      DATABASE: mongodb://mongodb:27017/playground
+      PORT: 30002
+    volumes:
+     - ./:/usr/app
+      - /usr/app/node_modules
+    
+    networks:
+      - app-network
+    links:
+      - mongodb
+  mongodb:
+    image: mongo
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge

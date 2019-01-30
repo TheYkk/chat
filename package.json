@@ -8,11 +8,14 @@
   },
   "keywords": [],
   "author": "germancutraro",
+  "contributors": [
+    "TheYkk (Yusuf Kaan Karakaya <yusufkaan142@gmail.com>)"
+  ],
   "license": "MIT",
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "mongoose": "^4.13.5",
+    "mongoose": "^5.4.8",
     "socket.io": "^2.0.4"
   }
 }

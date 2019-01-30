@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost/chat2', {useMongoClient: true});
+const dburl = process.env.DATABASE || 'mongodb://localhost/chat';
+mongoose.connect(dburl);
 
 mongoose.connection
   .once('open', () => console.log('Connected to the database'))
